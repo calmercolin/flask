@@ -50,7 +50,7 @@ jobs:
 
     - name: Push Docker image to ECR
       run: |
-        IMAGE_TAG=${GITHUB_SHA::7}
+        IMAGE_TAG=${GITHUB_SHA::7} 
         docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY:latest
 
     - name: Update ECS service to use new image
